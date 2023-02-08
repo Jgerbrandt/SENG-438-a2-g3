@@ -87,11 +87,16 @@ public class RangeTest {
     }
     
     @Test
-    public void theRangeShouldIntersect() {
+    public void theRangeShouldIntersectFullOverlap() {
     	assertTrue("The range from 0 to 100 should interect with a lower bound of 4", 
     			exampleRange2.intersects(4, 14));
     }
     
+    @Test
+    public void theRangeShouldIntersectPartOverlap() {
+    	assertTrue("The range from 0 to 100 should interect with a lower bound of 4", 
+    			exampleRange2.intersects(97, 130));
+    }
 
     @After
     public void tearDown() throws Exception {
