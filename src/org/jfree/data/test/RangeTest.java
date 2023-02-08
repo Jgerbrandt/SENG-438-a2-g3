@@ -36,9 +36,15 @@ public class RangeTest {
     }
     
     @Test
-    public void containsValueShouldBeFalse() {
+    public void containsValueOver() {
     	assertFalse("The Range of -1 to 1 should not contain the number 43", 
     			exampleRange1.contains(43));
+    }
+
+    @Test
+    public void containsValueUnder() {
+    	assertFalse("The Range of -1 to 1 should not contain the number 43", 
+    			exampleRange1.contains(-43));
     }
     
     @Test 
@@ -109,9 +115,15 @@ public class RangeTest {
     }
     
     @Test
-    public void theRangeShouldIntersectPartOverlap() {
-    	assertTrue("The range from 0 to 100 should interect with a lower bound of 4", 
+    public void theRangeShouldIntersectUpperOverlap() {
+    	assertTrue("The range from 0 to 100 should interect with a lower bound of 97", 
     			exampleRange2.intersects(97, 130));
+    }
+
+    @Test
+    public void theRangeShouldIntersectLowerOverlap() {
+    	assertTrue("The range from 0 to 100 should interect with an upper bound of 4", 
+    			exampleRange2.intersects(-20, 4));
     }
 
     @After
