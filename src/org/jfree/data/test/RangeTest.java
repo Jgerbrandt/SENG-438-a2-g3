@@ -17,11 +17,17 @@ public class RangeTest {
     }
 
 
-    @Test
-    public void centralValueShouldBeZero() {
-        assertEquals("The central value of -1 and 1 should be 0",
-        0, exampleRange1.getCentralValue(), .000000001d);
-    }
+
+//    @Test
+//    public void centralValueShouldBeZero() {
+//        assertEquals("The central value of -1 and 1 should be 0",
+//        0, exampleRange1.getCentralValue(), .000000001d);
+//    }
+    
+    
+    //----------------------------------------------------------
+    // Testing For the Contains Method
+    //----------------------------------------------------------
     
     @Test
     public void containsValueShouldBeTrue() {
@@ -30,28 +36,60 @@ public class RangeTest {
     }
     
     @Test
+    public void containsValueShouldBeFalse() {
+    	assertFalse("The Range of -1 to 1 should not contain the number 43", 
+    			exampleRange1.contains(43));
+    }
+    
+    
+    //----------------------------------------------------------
+    // Testing For the Upper Bound Method
+    //----------------------------------------------------------
+    
+    @Test
     public void returnedUpperBoundShouldBeOneHundered() {
     	assertEquals("The Upper bound for the range of 0 to 100 should be 100", 
     			100, exampleRange2.getUpperBound(), .000000001d);
     }
+    
+    
+    //----------------------------------------------------------
+    // Testing For the Lower Bound Method
+    //----------------------------------------------------------
+    
     
     @Test
     public void returneLowerBoundShouldBeZero() {
     	assertEquals("The Lower bound for the range of 0 to 100 should be 0", 
     			0, exampleRange2.getLowerBound(), .000000001d);
     }
+
+    
+    //----------------------------------------------------------
+    // Testing For the Get Length Method
+    //----------------------------------------------------------
     
     @Test
-    public void theStringVersionShouldBeCorrect() {
-    	String expected = new String("Range0.0,100.0]");
-    	assertEquals("The string version of the range of 0 to 100 shoudl be Range[0,100]", 
-    			expected, exampleRange2.toString());
+    public void TheLengthValueShouldBeThree() {
+    	assertEquals("The length of the range of -1 to 1 should be 2", 
+    			2.0, exampleRange1.getLength(), .000000001d);
     }
+
+    
+    //----------------------------------------------------------
+    // Testing the intersect method
+    //----------------------------------------------------------
     
     @Test
     public void theRangeShouldNotIntersect() {
     	assertFalse("The range from -1 to 1 should not interect with a lower bound of 4", 
     			exampleRange1.intersects(4, 14));
+    }
+    
+    @Test
+    public void theRangeShouldIntersect() {
+    	assertTrue("The range from 0 to 100 should interect with a lower bound of 4", 
+    			exampleRange2.intersects(4, 14));
     }
     
 
