@@ -51,34 +51,44 @@ public class DataUtilitiesTest{
     }
 	
     
-	 @Test
-	 public void calculateColumnTotalForTwoValues() {
-		 
-		Mockery mockingContext = new Mockery();
-    	Values2D values = mockingContext.mock(Values2D.class);
-	    mockingContext.checking(new Expectations() {
-	         {
-	             one(values).getRowCount();
-	             will(returnValue(2));
-	             one(values).getValue(0, 0);
-	             will(returnValue(7.5));
-	             one(values).getValue(1, 0);
-	             will(returnValue(2.5));
-	         }  
-	     });
-		 double result = DataUtilities.calculateColumnTotal(values, 0);
-	     assertEquals("the total of the values in the first "
-	     		+ "(and only) column of the 2D table should be 10",
-	    		 result, 10.0, .000000001d);
-	 }
 	 
-	 @Test
-	 public void calculateRowTotalForOneColumn() {
-		 double result = DataUtilities.calculateRowTotal(myValues, 1);
-		 assertEquals("the total of the values in the second "
-		     		+ "of 3 column of the 2D table should be 9.4",
-		    		 9.4, result, .000000001d);
-	 }
+    //----------------------------------------------------------
+    // Testing the column total method (Given in MD)
+    //----------------------------------------------------------
+    
+	@Test
+	public void calculateColumnTotalForTwoValues() {
+		
+	   Mockery mockingContext = new Mockery();
+	   Values2D values = mockingContext.mock(Values2D.class);
+	   mockingContext.checking(new Expectations() {
+			{
+				one(values).getRowCount();
+				will(returnValue(2));
+				one(values).getValue(0, 0);
+				will(returnValue(7.5));
+				one(values).getValue(1, 0);
+				will(returnValue(2.5));
+			}  
+		});
+		double result = DataUtilities.calculateColumnTotal(values, 0);
+		assertEquals("the total of the values in the first "
+				+ "(and only) column of the 2D table should be 10",
+				result, 10.0, .000000001d);
+	}
+	
+
+   //----------------------------------------------------------
+   // Testing the row total method
+   //----------------------------------------------------------
+	
+	@Test
+	public void calculateRowTotalForTwoValues() {
+		double result = DataUtilities.calculateRowTotal(myValues, 1);
+		assertEquals("the total of the values in the second "
+					+ "of 3 column of the 2D table should be 9.4",
+					9.4, result, .000000001d);
+	}
 	 
 	 
 	 
