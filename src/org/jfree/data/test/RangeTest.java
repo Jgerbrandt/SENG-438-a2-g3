@@ -41,6 +41,17 @@ public class RangeTest {
     			exampleRange1.contains(43));
     }
     
+    @Test 
+    public void containsValueUpperEdge() {
+    	assertTrue("The Range of 0 to 100 should contain the number 100 - Edge case",
+    			exampleRange2.contains(100));
+    }
+    
+    @Test 
+    public void containsValueLowerEdge() {
+    	assertTrue("The Range of 0 to 100 shouuld contain the lower bound 0",
+    			exampleRange2.contains(0));
+    }
     
     //----------------------------------------------------------
     // Testing For the Upper Bound Method
@@ -51,7 +62,6 @@ public class RangeTest {
     	assertEquals("The Upper bound for the range of 0 to 100 should be 100", 
     			100, exampleRange2.getUpperBound(), .000000001d);
     }
-    
     
     //----------------------------------------------------------
     // Testing For the Lower Bound Method
@@ -73,6 +83,12 @@ public class RangeTest {
     public void TheLengthValueShouldBeThree() {
     	assertEquals("The length of the range of -1 to 1 should be 2", 
     			2.0, exampleRange1.getLength(), .000000001d);
+    }
+    
+    @Test 
+    public void largerLengthValue() {
+    	assertEquals("The length of the range of 0 to 100 should be 100",
+    			100.0, exampleRange2.getLength(), .000000001d);
     }
 
     
