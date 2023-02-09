@@ -10,22 +10,12 @@ public class RangeTest {
     @BeforeClass public static void setUpBeforeClass() throws Exception {
     }
 
-
     @Before
     public void setUp() throws Exception {
     	exampleRange1 = new Range(-1, 1);
     	exampleRange2 = new Range(0,100);
     	exampleRange3 = new Range(-50,-5);
     }
-
-
-
-//    @Test
-//    public void centralValueShouldBeZero() {
-//        assertEquals("The central value of -1 and 1 should be 0",
-//        0, exampleRange1.getCentralValue(), .000000001d);
-//    }
-    
     
     //----------------------------------------------------------
     // Testing For the Contains Method
@@ -45,7 +35,7 @@ public class RangeTest {
 
     @Test
     public void containsValueUnder() {
-    	assertFalse("The Range of -1 to 1 should not contain the number 43", 
+    	assertFalse("The Range of -1 to 1 should not contain the number -43", 
     			exampleRange1.contains(-43));
     }
     
@@ -109,11 +99,6 @@ public class RangeTest {
     //----------------------------------------------------------
     // Testing For the Get Length Method
     //----------------------------------------------------------
-    
-    /*
-     * Find a way to do assertNotEquals by using assertTrue/False 
-     * Then test an incorrect length value
-     */
     
     @Test
     public void TheLengthValueShouldBeTwo() {
