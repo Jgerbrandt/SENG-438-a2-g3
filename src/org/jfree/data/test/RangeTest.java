@@ -137,13 +137,13 @@ public class RangeTest {
     
     @Test
     public void theRangeShouldIntersectUpperOverlap() {
-    	assertTrue("The range from 0 to 100 should interect with a lower bound of 97", 
+    	assertTrue("The range from 0 to 100 should intersect with a lower bound of 97", 
     			exampleRange2.intersects(97, 130));
     }
 
     @Test
     public void theRangeShouldIntersectLowerOverlap() {
-    	assertTrue("The range from 0 to 100 should interect with an upper bound of 4", 
+    	assertTrue("The range from 0 to 100 should intersect with an upper bound of 4", 
     			exampleRange2.intersects(-20, 4));
     }
 
