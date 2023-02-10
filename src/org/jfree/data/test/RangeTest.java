@@ -74,6 +74,12 @@ public class RangeTest {
     }
     
     @Test
+    public void returnedUpperBoundShouldNotBeSix() {
+    	assertFalse("The Upper bound for the range of 0 to 100 should be 100 not 6", 
+    			6 == exampleRange2.getUpperBound());
+    }
+    
+    @Test
     public void checkUpperBoundOnNegRange() {
     	assertEquals("The upper bound for the range of -50 to -5 should be -5",
     			-5, exampleRange3.getUpperBound(), .000000001d);
@@ -87,6 +93,12 @@ public class RangeTest {
     public void returneLowerBoundShouldBeZero() {
     	assertEquals("The Lower bound for the range of 0 to 100 should be 0", 
     			0, exampleRange2.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void returnedLowerBoundShouldNotBeNegativeTwelve() {
+    	assertFalse("The Lower bound for the range of 0 to 100 should be 0 not -12", 
+    			-12 == exampleRange2.getLowerBound());
     }
     
     @Test 
