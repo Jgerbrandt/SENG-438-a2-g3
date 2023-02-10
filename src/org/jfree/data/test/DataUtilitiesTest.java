@@ -72,14 +72,14 @@ public class DataUtilitiesTest{
     			allowing(myKeyedValues).getItemCount();
     			will(returnValue(3));
     			
-    			allowing(myKeyedValues).getIndex(5);
+    			allowing(myKeyedValues).getIndex(0);//Get The Index from a made up Key
     			will(returnValue(0));
-    			allowing(myKeyedValues).getKey(0);
+    			allowing(myKeyedValues).getKey(0);//Get Key from the index on the array basically
     			will(returnValue(0));
-    			allowing(myKeyedValues).getValue(0);
+    			allowing(myKeyedValues).getValue(0);//get the value stored from the key
     			will(returnValue(5));
     			
-    			allowing(myKeyedValues).getIndex(9);
+    			allowing(myKeyedValues).getIndex(1);
     			will(returnValue(1));
     			allowing(myKeyedValues).getKey(1);
     			will(returnValue(1));
