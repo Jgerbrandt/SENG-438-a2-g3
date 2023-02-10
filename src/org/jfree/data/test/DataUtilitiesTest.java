@@ -355,10 +355,10 @@ public class DataUtilitiesTest{
 		   }
 	 }
 	 
-	 @Test
+	 @Test //This test is very weird idk about it
 	 public void checkThatPercentageIsCalculatedCorrectly() {
 		 assertEquals("The Values from the cumulative percentage function should be",
-				 0.3125 ,DataUtilities.getCumulativePercentages(myKeyedValues).getValue(1));
+				 0.3125 , DataUtilities.getCumulativePercentages(myKeyedValues));
 	 }
 	 
 	 
