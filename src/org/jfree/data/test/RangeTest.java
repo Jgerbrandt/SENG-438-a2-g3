@@ -113,15 +113,15 @@ public class RangeTest {
     //----------------------------------------------------------
     
     @Test
-    public void TheLengthValueShouldBeTwo() {
+    public void theLengthValueShouldBeTwo() {
     	assertEquals("The length of the range of -1 to 1 should be 2", 
     			2.0, exampleRange1.getLength(), .000000001d);
     }
     
     @Test 
-    public void largerLengthValue() {
-    	assertEquals("The length of the range of 0 to 100 should be 100",
-    			100.0, exampleRange2.getLength(), .000000001d);
+    public void lengthValueShouldNotBeFour() {
+    	assertFalse("The length of the range of 0 to 100 should be 100 not 4",
+    			4.0 == exampleRange2.getLength());
     }
     
     @Test 

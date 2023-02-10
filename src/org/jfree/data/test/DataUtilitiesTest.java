@@ -143,12 +143,12 @@ public class DataUtilitiesTest{
 	 
 	 @Test
 	 public void mock_tryToUseNegativeIndexForTheColumn() {
-		 try {
+		 //try {
 			 DataUtilities.calculateColumnTotal(myValues, -1);
-		   } catch(Exception e) {
-		      fail("The function should return zero if the input INDEX is wrong"
-		      		+ "not throw an exception but instead give the value of 0");
-		   }
+		  // } catch(Exception e) {
+		     // fail("The function should return zero if the input INDEX is wrong"
+		     // 		+ "not throw an exception but instead give the value of 0");
+		  // }
 		 
 //		 assertEquals("The function should return zero if the input is wrong",
 //				 0, DataUtilities.calculateColumnTotal(myValues, -1), .000000001d);
