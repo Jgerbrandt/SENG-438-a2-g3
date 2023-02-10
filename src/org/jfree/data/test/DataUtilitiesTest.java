@@ -4,12 +4,10 @@ import static org.junit.Assert.*;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.jfree.data.DataUtilities;
 import org.jfree.data.KeyedValues;
-import org.jfree.data.Range;
 import org.jfree.data.Values2D;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
@@ -116,7 +114,7 @@ public class DataUtilitiesTest{
     //----------------------------------------------------------
     
 	 @Test //Pre-made Mocking Test
-	 public void calculateColumnTotalForTwoValues() {
+	 public void mock_calculateColumnTotalForTwoValues() {
 		Mockery mockingContext = new Mockery();
     	Values2D values = mockingContext.mock(Values2D.class);
 	    mockingContext.checking(new Expectations() {
@@ -136,7 +134,7 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test
-	 public void calculateColumnTotalForThreeValuesAndTwoRows() {
+	 public void mockcalculateColumnTotalForThreeValuesAndTwoRows() {
 		 double result = DataUtilities.calculateColumnTotal(myValues, 0);
 	     assertEquals("the total of the values in the first "
 	     		+ " column of the 2D table should be 10.5",
@@ -144,7 +142,7 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test
-	 public void tryToUseNegativeIndexForTheColumn() {
+	 public void mock_tryToUseNegativeIndexForTheColumn() {
 		 try {
 			 DataUtilities.calculateColumnTotal(myValues, -1);
 		   } catch(Exception e) {
@@ -157,7 +155,7 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test
-	 public void tryToUseLargerThanPossibleIndexForTheColumn() {
+	 public void mock_tryToUseLargerThanPossibleIndexForTheColumn() {
 		 try {
 			 DataUtilities.calculateColumnTotal(myValues, 12);
 		   } catch(Exception e) {
@@ -172,7 +170,7 @@ public class DataUtilitiesTest{
     //----------------------------------------------------------
 	 
 	 @Test
-	 public void calculateRowTotalForTwoValues() {
+	 public void mock_calculateRowTotalForTwoValues() {
 		 double result = DataUtilities.calculateRowTotal(myValues, 1);
 		 assertEquals("the total of the values in the second "
 		     		+ "of 3 column of the 2D table should be 9.4",
@@ -180,7 +178,7 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test
-	 public void tryToUseNegativeIndexForTheRowIndex() {
+	 public void mock_tryToUseNegativeIndexForTheRowIndex() {
 		 try {
 			 DataUtilities.calculateRowTotal(myValues, -1);
 		   } catch(Exception e) {
@@ -190,7 +188,7 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test
-	 public void tryToUseLargerThanPossibleIndexForTheRow() {
+	 public void mock_tryToUseLargerThanPossibleIndexForTheRow() {
 		 try {
 			 DataUtilities.calculateColumnTotal(myValues, 12);
 		   } catch(Exception e) {
@@ -338,7 +336,7 @@ public class DataUtilitiesTest{
     //----------------------------------------------------------
 	 
 	 @Test
-	 public void checkThatNullArgThrowsException(){
+	 public void mock_checkThatNullArgThrowsException(){
 		 try {
 			 KeyedValues nullObj = null;
 			 DataUtilities.getCumulativePercentages(nullObj);
@@ -350,18 +348,18 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectlyForFirstValue() {
+	 public void mock_checkThatPercentageIsCalculatedCorrectlyForFirstValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
 				 0.3125 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(0));
 	 }
 	 
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectlyForSecondValue() {
+	 public void mock_checkThatPercentageIsCalculatedCorrectlyForSecondValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
 				 0.875 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(1));
 	 }
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectlyForThirdValue() {
+	 public void mock_checkThatPercentageIsCalculatedCorrectlyForThirdValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
 				 1 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(2));
 	 }
