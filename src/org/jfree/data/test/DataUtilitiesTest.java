@@ -73,12 +73,6 @@ public class DataUtilitiesTest{
     		{
     			allowing(myKeyedValues).getItemCount();
     			will(returnValue(3));
-    			one(myKeyedValues).getItemCount();
-    			will(returnValue(2));
-    			one(myKeyedValues).getItemCount();
-    			will(returnValue(1));
-    			one(myKeyedValues).getItemCount();
-    			will(returnValue(0));
     			
     			allowing(myKeyedValues).getIndex(5);
     			will(returnValue(0));
@@ -121,7 +115,7 @@ public class DataUtilitiesTest{
     // Testing the column total method (Given in MD)
     //----------------------------------------------------------
     
-	 @Test
+	 @Test //Pre-made Mocking Test
 	 public void calculateColumnTotalForTwoValues() {
 		Mockery mockingContext = new Mockery();
     	Values2D values = mockingContext.mock(Values2D.class);
@@ -356,19 +350,20 @@ public class DataUtilitiesTest{
 	 }
 	 
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectly() {
+	 public void checkThatPercentageIsCalculatedCorrectlyForFirstValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
 				 0.3125 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(0));
 	 }
+	 
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectly2() {
+	 public void checkThatPercentageIsCalculatedCorrectlyForSecondValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
-				 0.3125 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(1));
+				 0.875 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(1));
 	 }
 	 @Test //This test is very weird idk about it
-	 public void checkThatPercentageIsCalculatedCorrectly3() {
+	 public void checkThatPercentageIsCalculatedCorrectlyForThirdValue() {
 		 assertEquals("The Values from the cumulative percentage function should be",
-				 0.3125 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(2));
+				 1 , DataUtilities.getCumulativePercentages(myKeyedValues).getValue(2));
 	 }
 	 
 	 
